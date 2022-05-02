@@ -1,10 +1,9 @@
 package main
 
 import (
+	"github.com/go-shortcut/httpproxy/v2"
 	"log"
 	"net/http"
-
-	"github.com/go-httpproxy/httpproxy"
 )
 
 func OnError(ctx *httpproxy.Context, where string,

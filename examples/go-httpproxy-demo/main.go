@@ -19,6 +19,7 @@ package main
 import (
 	"context"
 	"crypto/tls"
+	"github.com/go-shortcut/httpproxy/v2"
 	"log"
 	"net/http"
 	"os"
@@ -26,8 +27,6 @@ import (
 	"sync"
 	"syscall"
 	"time"
-
-	"github.com/go-httpproxy/httpproxy"
 )
 
 var logErr = log.New(os.Stderr, "ERR: ", log.LstdFlags)
@@ -111,7 +110,7 @@ func main() {
 		Handler:      prx,
 		TLSNextProto: make(map[string]func(*http.Server, *tls.Conn, http.Handler)),
 		TLSConfig: &tls.Config{
-			MinVersion:               tls.VersionSSL30,
+			MinVersion:               tls.VersionTLS12,
 			CurvePreferences:         []tls.CurveID{tls.CurveP521, tls.CurveP384, tls.CurveP256},
 			PreferServerCipherSuites: true,
 			CipherSuites: []uint16{

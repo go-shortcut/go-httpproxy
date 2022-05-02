@@ -1,6 +1,6 @@
 # Go HTTP proxy server library
 
-[![GoDoc](https://godoc.org/github.com/go-httpproxy/httpproxy?status.svg)](https://godoc.org/github.com/go-httpproxy/httpproxy)
+[![GoDoc](https://godoc.org/github.com/go-shortcut/httpproxy?status.svg)](https://godoc.org/github.com/go-shortcut/httpproxy)
 
 Package httpproxy provides a customizable HTTP proxy; supports HTTP, HTTPS through
 CONNECT. And also provides HTTPS connection using "Man in the Middle" style
@@ -12,9 +12,7 @@ package to offer `http.ListenAndServe` function.
 ## Installing
 
 ```sh
-go get -u github.com/go-httpproxy/httpproxy
-# or
-go get -u gopkg.in/httpproxy.v1
+go get -u github.com/go-shortcut/httpproxy/v2
 ```
 
 ## Usage
@@ -125,7 +123,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/go-httpproxy/httpproxy"
+	"github.com/go-shortcut/httpproxy/v2"
 )
 
 func OnError(ctx *httpproxy.Context, where string,
